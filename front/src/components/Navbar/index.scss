@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  font-family: sans-serif;
+
+  .container {
+    max-width: 1125px;
+    margin: 0 auto;
+    display: block;
+
+    .navbar-top {
+      display: flex;
+      justify-content: space-between ;
+      align-items: center;
+      margin: 10px 0px;
+
+      .categories {
+        .category {
+          text-decoration: none;
+          color: rgb(41, 38, 33);
+          padding: 10px;
+        }
+      }
+      .social {
+        display: flex;
+        .socials {
+          text-decoration: none;
+          color: rgb(41, 38, 33);
+          padding: 8px;
+        }
+        .icons {
+          color: #74706b;
+          padding: 5px;
+        }
+      }
+    }
+    .navbar-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+
+      .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .sections {
+          color: #000;
+          text-decoration: none;
+          font-size: 18px;
+          font-weight: 500;
+          padding: 0 10px;
+          transition: color 0.5s;
+          &:hover {
+            color: #ff1e24;
+          }
+        }
+      }
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          padding: 0 10px;
+          transition: color 0.2s;
+          text-decoration: none;
+
+          &:hover {
+            color: #ff1e24;
+          }
+        }
+      }
+      .burger {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .navbar{
+    .container{
+        .navbar-top{
+            display: none;
+        }
+        .navbar-bottom{
+            justify-content: space-around;
+            .desktop{
+                display: none;
+            }
+            .links, .icon {
+                display: none;
+            }
+            .burger{
+                display: block;
+            }
+        }
+    }
+  }
+}

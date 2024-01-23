@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.trending {
+  .container {
+    max-width: 1125px;
+    margin: 0 auto;
+
+    h2 {
+      margin-top: 50px;
+    }
+    .row {
+      .cards {
+        text-align: center;
+        img{
+          width: 100%;
+        }
+        .title {
+          padding: 20px;
+          h6 &:hover {
+            color: #ff1e24;
+          }
+          .prices {
+            display: flex;
+            justify-content: space-around;
+            .price {
+              text-decoration: line-through;
+              color: #d2c2a3;
+              font-weight: 600;
+            }
+          }
+          
+        }
+        button {
+          width: 100%;
+          background-color: #ff1e24;
+          color: white;
+          border-color: #ff1e24;
+          margin-bottom: 40px ;
+          padding: 15px 40px;
+          cursor: pointer;
+          transition: 0.4s;
+          &:hover{
+              background-color: white;
+              color: #ff1e24;
+              border: 1px solid #ff1e24;
+          
+          }
+        }
+      }
+    }
+  }
+}
