@@ -9,10 +9,28 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { BasketItemContext } from "../../services/context/basketItemContextProvider";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 const Basket = () => {
   const { basketItem, removeItem, handleIncrease, handleDecrease } =
     useContext(BasketItemContext);
+
+  const handleDelete = (data) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeItem(data);
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+      }
+    });
+  };
 
   return (
     <>
@@ -61,7 +79,7 @@ const Basket = () => {
                         onClick={() => handleIncrease(data)}
                         variant="contained"
                       >
-                        Increase
+                        +
                       </Button>
                     </TableCell>
                     <TableCell align="center">
@@ -70,12 +88,12 @@ const Basket = () => {
                         variant="contained"
                         disabled={data?.quantity === 1}
                       >
-                        Decrease
+                        -
                       </Button>
                     </TableCell>
                     <TableCell align="center">
                       <Button
-                        onClick={() => removeItem(data)}
+                        onClick={() => handleDelete(data)}
                         variant="contained"
                       >
                         Delete

@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import MainRoot from "../pages/MainRoot";
 import DetailsPage from "../pages/DetailsPage";
 import Basket from "../pages/Basket";
+import Wishlist from "../pages/Wishlist";
 
 export const ROUTES = [
   {
@@ -24,6 +25,10 @@ export const ROUTES = [
       {
         path: "/basket",
         element: <Basket />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist />,
       },
     ],
   },

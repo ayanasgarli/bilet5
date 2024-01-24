@@ -24,7 +24,7 @@ const Navbar = () => {
               <Link className="category">Careers</Link>
             </div>
             <div className="social">
-              <Link className="socials"> My Wishlist</Link>
+              <Link to="/wishlist" className="socials"> My Wishlist</Link>
               <Link className="socials">Track your order</Link>
               <div className="icons">
                 <Link className="icons">
